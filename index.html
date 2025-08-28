@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogPro - Modern Publishing Platform</title>
+    <meta name="description" content="The modern publishing platform of choice for creators and businesses worldwide—from personal blogs to enterprise content.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <span class="logo-icon">B</span>
+                </div>
+                <span class="brand-name">BlogPro</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link">News</a>
+                <a href="#" class="nav-link">Showcase</a>
+                <a href="#" class="nav-link">Hosting</a>
+                <a href="#" class="nav-link">Learn</a>
+                <a href="#" class="nav-link">Community</a>
+                <a href="#" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Technology</a>
+                        <a href="#" class="dropdown-item">Productivity</a>
+                        <a href="#" class="dropdown-item">Design</a>
+                        <a href="#" class="dropdown-item">Career</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="search-btn" id="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary">Write</button>
+                <div class="user-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User">
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search articles, topics, or authors..." id="search-input">
+                <button class="search-close" id="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <h1 class="hero-title">
+                Meet <br>
+                <span class="text-gradient">BlogPro</span>
+            </h1>
+            <p class="hero-subtitle">
+                The modern publishing platform of choice for creators and businesses
+                worldwide—from personal blogs to enterprise content.
+            </p>
+            
+            <div class="hero-search">
+                <div class="search-input-group">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search articles, topics, or authors...">
+                    <button class="btn btn-primary">Search</button>
+                </div>
+            </div>
+            
+            <div class="hero-actions">
+                <button class="btn btn-primary btn-large">
+                    <i class="fas fa-book"></i>
+                    Explore Articles
+                </button>
+                <button class="btn btn-outline btn-large">Start Writing</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Posts Section -->
+    <section class="featured-posts">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-star"></i>
+                    <span>EDITOR'S CHOICE</span>
+                </div>
+                <h2 class="section-title">
+                    Featured <span class="text-gradient">Articles</span>
+                </h2>
+                <p class="section-subtitle">Hand-picked stories that are trending and worth your time</p>
+                <a href="#" class="section-link">
+                    <i class="fas fa-trending-up"></i>
+                    Trending Now
+                </a>
+            </div>
+            
+            <div class="featured-grid">
+                <article class="featured-card featured-card-large">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="AI Technology">
+                        <div class="card-category">Technology</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">The Future of AI: Machine Learning Trends in 2024</h3>
+                        <p class="card-excerpt">Explore the latest developments in artificial intelligence and machine learning that are shaping the future of technology.</p>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" alt="Sarah Chen" class="author-avatar">
+                                <div class="author-details">
+                                    <span class="author-name">Sarah Chen</span>
+                                    <span class="post-date">over 1 year ago</span>
+                                </div>
+                            </div>
+                            <span class="read-time">
+                                <i class="fas fa-clock"></i>
+                                8 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="featured-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="Web Development">
+                        <div class="card-category">Technology</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Building Modern Web Applications with React and TypeScript</h3>
+                        <p class="card-excerpt">Learn how to create scalable and maintainable web applications using React and TypeScript with modern development practices.</p>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=40&h=40&fit=crop&crop=face" alt="Elena Rodriguez" class="author-avatar">
+                                <div class="author-details">
+                                    <span class="author-name">Elena Rodriguez</span>
+                                    <span class="post-date">over 1 year ago</span>
+                                </div>
+                            </div>
+                            <span class="read-time">
+                                <i class="fas fa-clock"></i>
+                                12 min read
+                            </span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <div class="container">
+            <div class="categories-grid">
+                <div class="category-card" data-category="technology">
+                    <div class="category-icon tech-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="category-title">Technology</h3>
+                    <p class="category-description">Latest trends in technology and software development</p>
+                    <span class="category-count">2 articles</span>
+                </div>
+                
+                <div class="category-card" data-category="productivity">
+                    <div class="category-icon productivity-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="category-title">Productivity</h3>
+                    <p class="category-description">Tips and tricks to boost your productivity</p>
+                    <span class="category-count">1 article</span>
+                </div>
+                
+                <div class="category-card" data-category="design">
+                    <div class="category-icon design-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="category-title">Design</h3>
+                    <p class="category-description">UI/UX design principles and best practices</p>
+                    <span class="category-count">0 articles</span>
+                </div>
+                
+                <div class="category-card" data-category="career">
+                    <div class="category-icon career-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="category-title">Career</h3>
+                    <p class="category-description">Career advice and professional development</p>
+                    <span class="category-count">0 articles</span>
+                </div>
+            </div>
+            
+            <div class="categories-footer">
+                <a href="#" class="btn btn-outline">
+                    View all categories
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Posts Section -->
+    <section class="latest-posts">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">
+                    <i class="fas fa-clock"></i>
+                    <span>FRESH CONTENT</span>
+                </div>
+                <h2 class="section-title">
+                    Latest <span class="text-gradient">Articles</span>
+                </h2>
+                <p class="section-subtitle">Stay updated with our newest insights and discoveries</p>
+                <a href="#" class="section-link">
+                    View all articles
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="latest-grid">
+                <article class="blog-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=400&h=250&fit=crop" alt="AI Technology">
+                        <div class="card-category">Technology</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">The Future of AI: Machine Learning Trends in 2024</h3>
+                        <p class="card-excerpt">Explore the latest developments in artificial intelligence and machine learning that are shaping the future of technology.</p>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=32&h=32&fit=crop&crop=face" alt="Sarah Chen" class="author-avatar">
+                                <div class="author-details">
+                                    <span class="author-name">Sarah Chen</span>
+                                    <span class="post-date">over 1 year ago • 8 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=400&h=250&fit=crop" alt="Web Development">
+                        <div class="card-category">Technology</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Building Modern Web Applications with React and TypeScript</h3>
+                        <p class="card-excerpt">Learn how to create scalable and maintainable web applications using React and TypeScript with modern development practices.</p>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=32&h=32&fit=crop&crop=face" alt="Elena Rodriguez" class="author-avatar">
+                                <div class="author-details">
+                                    <span class="author-name">Elena Rodriguez</span>
+                                    <span class="post-date">over 1 year ago • 12 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="card-image">
+                        <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=400&h=250&fit=crop" alt="Productivity">
+                        <div class="card-category">Productivity</div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">10 Productivity Hacks That Will Transform Your Workday</h3>
+                        <p class="card-excerpt">Discover proven productivity techniques that successful professionals use to maximize their efficiency and achieve better work-life balance.</p>
+                        <div class="card-meta">
+                            <div class="author-info">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=32&h=32&fit=crop&crop=face" alt="Marcus Johnson" class="author-avatar">
+                                <div class="author-details">
+                                    <span class="author-name">Marcus Johnson</span>
+                                    <span class="post-date">over 1 year ago • 6 min read</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="newsletter-title">
+                    Stay in the <span class="text-gradient">Loop</span>
+                </h2>
+                <p class="newsletter-subtitle">
+                    Get the latest articles, insights, and updates delivered directly to your inbox.
+                    <br>No spam, unsubscribe anytime.
+                </p>
+                
+                <form class="newsletter-form" id="newsletter-form">
+                    <div class="input-group">
+                        <input type="email" placeholder="Enter your email address" required>
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-envelope"></i>
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+                
+                <p class="newsletter-note">
+                    Join 25,000+ readers who trust us with their weekly dose of insights.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="brand">
+                        <div class="brand-logo">
+                            <span class="logo-icon">B</span>
+                        </div>
+                        <span class="brand-name">BlogPro</span>
+                    </div>
+                    <p class="footer-description">
+                        A modern platform for writers and readers to connect, share ideas, and discover inspiring content. Join our growing community of passionate storytellers.
+                    </p>
+                    <div class="social-links">
+                        <span class="social-label">Follow us:</span>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Write for Us</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Authors</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
