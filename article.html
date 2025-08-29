@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Building Modern Web Applications with React and TypeScript - ReadersClub</title>
+    <meta name="description" content="Learn how to create scalable and maintainable web applications using React and TypeScript with modern development practices.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <span class="logo-icon">R</span>
+                </div>
+                <span class="brand-name">ReadersClub</span>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link">News</a>
+                <a href="#" class="nav-link">Showcase</a>
+                <a href="#" class="nav-link">Hosting</a>
+                <a href="#" class="nav-link">Learn</a>
+                <a href="#" class="nav-link">Community</a>
+                <a href="#" class="nav-link">About</a>
+                <div class="nav-dropdown">
+                    <a href="#" class="nav-link dropdown-toggle">Categories <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="#" class="dropdown-item">Technology</a>
+                        <a href="#" class="dropdown-item">Productivity</a>
+                        <a href="#" class="dropdown-item">Design</a>
+                        <a href="#" class="dropdown-item">Career</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-actions">
+                <button class="search-btn" id="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <a href="blog-editor.html" class="btn btn-primary">Write</a>
+                <div class="user-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User">
+                </div>
+            </div>
+            
+            <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="search-overlay">
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search articles, topics, or authors..." id="search-input">
+                <button class="search-close" id="search-close">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Header -->
+    <header class="article-header">
+        <div class="container">
+            <div class="article-navigation">
+                <a href="index.html" class="back-to-home">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+            </div>
+            
+            <div class="article-meta">
+                <div class="article-category">
+                    <span class="category-tag">Technology</span>
+                </div>
+                
+                <h1 class="article-title">Building Modern Web Applications with React and TypeScript</h1>
+                
+                <div class="article-author">
+                    <div class="author-info">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=60&h=60&fit=crop&crop=face" alt="Elena Rodriguez" class="author-avatar">
+                        <div class="author-details">
+                            <h3 class="author-name">Elena Rodriguez</h3>
+                            <p class="author-bio">UX Designer and frontend developer passionate about creating beautiful user experiences.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="article-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-calendar"></i>
+                        <span>over 1 year ago</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock"></i>
+                        <span>12 min read</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-eye"></i>
+                        <span>1,876 views</span>
+                    </div>
+                </div>
+                
+                <div class="article-tags">
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">React</span>
+                    <span class="tag">Best Practices</span>
+                </div>
+            </div>
+            
+            <div class="article-actions">
+                <button class="action-btn like-btn" id="like-btn">
+                    <i class="far fa-heart"></i>
+                    <span class="like-count">94</span>
+                </button>
+                <button class="action-btn bookmark-btn" id="bookmark-btn">
+                    <i class="far fa-bookmark"></i>
+                </button>
+                <button class="action-btn share-btn" id="share-btn">
+                    <i class="fas fa-share"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Article Hero Image -->
+    <section class="article-hero">
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&h=600&fit=crop" alt="Code on laptop screen">
+        </div>
+    </section>
+
+    <!-- Article Content -->
+    <main class="article-content">
+        <div class="container">
+            <div class="content-wrapper">
+                <article class="article-body">
+                    <div class="article-text">
+                        <p class="lead-paragraph">
+                            Modern web development has evolved significantly over the past decade, with frameworks like React and languages like TypeScript leading the charge. In this comprehensive guide, we'll explore how to build scalable, maintainable web applications that stand the test of time.
+                        </p>
+                        
+                        <h2>Why React and TypeScript?</h2>
+                        <p>
+                            React has become the de facto standard for building user interfaces, offering a component-based architecture that promotes reusability and maintainability. When combined with TypeScript, you get the benefits of static typing, better IDE support, and fewer runtime errors.
+                        </p>
+                        
+                        <p>
+                            The combination of React's declarative UI approach and TypeScript's type safety creates a powerful foundation for building complex applications. Let's dive into the key concepts and best practices.
+                        </p>
+                        
+                        <h2>Setting Up Your Development Environment</h2>
+                        <p>
+                            Before we start building, let's ensure you have the right tools in place. You'll need Node.js installed on your system, along with a code editor that supports TypeScript (VS Code is highly recommended).
+                        </p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">bash</span>
+                                <button class="copy-code-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code># Create a new React TypeScript project
+npx create-react-app my-app --template typescript
+
+# Navigate to project directory
+cd my-app
+
+# Install additional dependencies
+npm install @types/node @types/react @types/react-dom
+
+# Start development server
+npm start</code></pre>
+                        </div>
+                        
+                        <h2>Component Architecture Best Practices</h2>
+                        <p>
+                            When building React applications with TypeScript, it's crucial to follow established patterns for component structure. Here are some key principles to keep in mind:
+                        </p>
+                        
+                        <ul>
+                            <li><strong>Single Responsibility:</strong> Each component should have one clear purpose</li>
+                            <li><strong>Props Interface:</strong> Define clear interfaces for component props</li>
+                            <li><strong>State Management:</strong> Use appropriate state management patterns</li>
+                            <li><strong>Error Boundaries:</strong> Implement error handling at component boundaries</li>
+                        </ul>
+                        
+                        <h2>TypeScript Integration</h2>
+                        <p>
+                            TypeScript brings several benefits to React development. Let's look at how to properly type your components and props:
+                        </p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">typescript</span>
+                                <button class="copy-code-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code>interface UserCardProps {
+  user: {
+    id: number;
+    name: string;
+    email: string;
+    avatar?: string;
+  };
+  onUserClick: (userId: number) => void;
+  isSelected?: boolean;
+}
+
+const UserCard: React.FC<UserCardProps> = ({
+  user,
+  onUserClick,
+  isSelected = false
+}) => {
+  return (
+    <div 
+      className={`user-card ${isSelected ? 'selected' : ''}`}
+      onClick={() => onUserClick(user.id)}
+    >
+      <img src={user.avatar || '/default-avatar.png'} alt={user.name} />
+      <h3>{user.name}</h3>
+      <p>{user.email}</p>
+    </div>
+  );
+};</code></pre>
+                        </div>
+                        
+                        <h2>Performance Optimization</h2>
+                        <p>
+                            React applications can become slow as they grow in complexity. Here are some techniques to keep your app running smoothly:
+                        </p>
+                        
+                        <ul>
+                            <li><strong>React.memo:</strong> Prevent unnecessary re-renders</li>
+                            <li><strong>useMemo & useCallback:</strong> Optimize expensive calculations</li>
+                            <li><strong>Code Splitting:</strong> Load components on demand</li>
+                            <li><strong>Lazy Loading:</strong> Defer non-critical resources</li>
+                        </ul>
+                        
+                        <h2>Testing Your Application</h2>
+                        <p>
+                            A robust testing strategy is essential for maintaining code quality. React Testing Library combined with Jest provides excellent tools for testing React components:
+                        </p>
+                        
+                        <div class="code-block">
+                            <div class="code-header">
+                                <span class="code-language">typescript</span>
+                                <button class="copy-code-btn" onclick="copyCode(this)">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </div>
+                            <pre><code>import { render, screen, fireEvent } from '@testing-library/react';
+import UserCard from './UserCard';
+
+describe('UserCard', () => {
+  const mockUser = {
+    id: 1,
+    name: 'John Doe',
+    email: 'john@example.com'
+  };
+  
+  const mockOnClick = jest.fn();
+  
+  it('renders user information correctly', () => {
+    render(<UserCard user={mockUser} onUserClick={mockOnClick} />);
+    
+    expect(screen.getByText('John Doe')).toBeInTheDocument();
+    expect(screen.getByText('john@example.com')).toBeInTheDocument();
+  });
+  
+  it('calls onUserClick when clicked', () => {
+    render(<UserCard user={mockUser} onUserClick={mockOnClick} />);
+    
+    fireEvent.click(screen.getByRole('button'));
+    expect(mockOnClick).toHaveBeenCalledWith(1);
+  });
+});</code></pre>
+                        </div>
+                        
+                        <h2>Deployment and CI/CD</h2>
+                        <p>
+                            Once your application is ready, you'll want to deploy it efficiently. Modern deployment platforms offer seamless integration with Git workflows:
+                        </p>
+                        
+                        <ul>
+                            <li><strong>Vercel:</strong> Zero-config deployment for React apps</li>
+                            <li><strong>Netlify:</strong> Automated builds and deployments</li>
+                            <li><strong>GitHub Actions:</strong> Custom CI/CD pipelines</li>
+                            <li><strong>Docker:</strong> Containerized deployments</li>
+                        </ul>
+                        
+                        <h2>Conclusion</h2>
+                        <p>
+                            Building modern web applications with React and TypeScript provides a solid foundation for scalable, maintainable code. By following the best practices outlined in this guide, you'll be well-equipped to create applications that not only meet current requirements but also adapt to future needs.
+                        </p>
+                        
+                        <p>
+                            Remember, the key to success lies in understanding the fundamentals, following established patterns, and continuously learning from the community. Happy coding!
+                        </p>
+                    </div>
+                </article>
+                
+                <!-- Sidebar -->
+                <aside class="article-sidebar">
+                    <div class="sidebar-widget author-widget">
+                        <h3>About the Author</h3>
+                        <div class="author-card">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=80&h=80&fit=crop&crop=face" alt="Elena Rodriguez" class="sidebar-author-avatar">
+                            <h4>Elena Rodriguez</h4>
+                            <p>UX Designer and frontend developer with 8+ years of experience building user-centered web applications.</p>
+                            <div class="author-stats">
+                                <span><i class="fas fa-article"></i> 23 articles</span>
+                                <span><i class="fas fa-users"></i> 1.2k followers</span>
+                            </div>
+                            <button class="btn btn-outline btn-sm">Follow Author</button>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget related-posts">
+                        <h3>Related Articles</h3>
+                        <div class="related-post">
+                            <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=120&h=80&fit=crop" alt="AI Technology">
+                            <div class="related-post-info">
+                                <h4>The Future of AI: Machine Learning Trends in 2024</h4>
+                                <span class="post-meta">8 min read • Technology</span>
+                            </div>
+                        </div>
+                        <div class="related-post">
+                            <img src="https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=120&h=80&fit=crop" alt="Productivity">
+                            <div class="related-post-info">
+                                <h4>10 Productivity Hacks That Will Transform Your Workday</h4>
+                                <span class="post-meta">6 min read • Productivity</span>
+                            </div>
+                        </div>
+                        <div class="related-post">
+                            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?w=120&h=80&fit=crop" alt="Design">
+                            <div class="related-post-info">
+                                <h4>Design Systems: Creating Consistency in UI</h4>
+                                <span class="post-meta">7 min read • Design</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget newsletter-widget">
+                        <h3>Stay Updated</h3>
+                        <p>Get the latest articles and insights delivered to your inbox.</p>
+                        <form class="sidebar-newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                        </form>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Article Footer -->
+    <footer class="article-footer">
+        <div class="container">
+            <div class="article-engagement">
+                <div class="engagement-stats">
+                    <div class="stat">
+                        <i class="fas fa-heart"></i>
+                        <span>94 likes</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-comment"></i>
+                        <span>12 comments</span>
+                    </div>
+                    <div class="stat">
+                        <i class="fas fa-share"></i>
+                        <span>28 shares</span>
+                    </div>
+                </div>
+                
+                <div class="engagement-actions">
+                    <button class="btn btn-primary" id="like-article-btn">
+                        <i class="far fa-heart"></i>
+                        Like Article
+                    </button>
+                    <button class="btn btn-outline" id="comment-btn">
+                        <i class="fas fa-comment"></i>
+                        Add Comment
+                    </button>
+                    <button class="btn btn-outline" id="share-article-btn">
+                        <i class="fas fa-share"></i>
+                        Share
+                    </button>
+                </div>
+            </div>
+            
+            <div class="article-navigation-links">
+                <a href="#" class="nav-link prev-article">
+                    <i class="fas fa-arrow-left"></i>
+                    <div class="nav-link-content">
+                        <span class="nav-link-label">Previous Article</span>
+                        <span class="nav-link-title">The Future of AI: Machine Learning Trends in 2024</span>
+                    </div>
+                </a>
+                <a href="#" class="nav-link next-article">
+                    <div class="nav-link-content">
+                        <span class="nav-link-label">Next Article</span>
+                        <span class="nav-link-title">10 Productivity Hacks That Will Transform Your Workday</span>
+                    </div>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Comments Section -->
+    <section class="comments-section">
+        <div class="container">
+            <h3>Comments (12)</h3>
+            
+            <div class="comment-form">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="Your Avatar" class="comment-avatar">
+                <form class="comment-input-form">
+                    <textarea placeholder="Share your thoughts..." rows="3"></textarea>
+                    <button type="submit" class="btn btn-primary">Post Comment</button>
+                </form>
+            </div>
+            
+            <div class="comments-list">
+                <div class="comment">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=40&h=40&fit=crop&crop=face" alt="Mike Chen" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <h4 class="comment-author">Mike Chen</h4>
+                            <span class="comment-date">2 days ago</span>
+                        </div>
+                        <p class="comment-text">Great article! I've been using React with TypeScript for about a year now, and the type safety has saved me countless hours of debugging. The testing examples you provided are particularly helpful.</p>
+                        <div class="comment-actions">
+                            <button class="comment-action">
+                                <i class="far fa-heart"></i>
+                                <span>5</span>
+                            </button>
+                            <button class="comment-action">
+                                <i class="fas fa-reply"></i>
+                                Reply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="comment">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=40&h=40&fit=crop&crop=face" alt="Sarah Johnson" class="comment-avatar">
+                    <div class="comment-content">
+                        <div class="comment-header">
+                            <h4 class="comment-author">Sarah Johnson</h4>
+                            <span class="comment-date">1 week ago</span>
+                        </div>
+                        <p class="comment-text">This is exactly what I needed! I'm just starting with TypeScript and React, and this guide breaks everything down so clearly. The component architecture section was especially valuable.</p>
+                        <div class="comment-actions">
+                            <button class="comment-action">
+                                <i class="far fa-heart"></i>
+                                <span>3</span>
+                            </button>
+                            <button class="comment-action">
+                                <i class="fas fa-reply"></i>
+                                Reply
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="brand">
+                        <div class="brand-logo">
+                            <span class="logo-icon">R</span>
+                        </div>
+                        <span class="brand-name">ReadersClub</span>
+                    </div>
+                    <p class="footer-description">
+                        A modern platform for writers and readers to connect, share ideas, and discover inspiring content. Join our growing community of passionate storytellers.
+                    </p>
+                    <div class="social-links">
+                        <span class="social-label">Follow us:</span>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="blog-editor.html">Write for Us</a></li>
+                        <li><a href="#">Categories</a></li>
+                        <li><a href="#">Authors</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Resources</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">RSS Feed</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="demo-data.js"></script>
+    <script src="script.js"></script>
+    <script src="article.js"></script>
+</body>
+</html>

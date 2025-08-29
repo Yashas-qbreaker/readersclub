@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post - BlogPro</title>
+    <meta name="description" content="Edit your blog post with BlogPro's powerful editor">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <span class="logo-icon">R</span>
+                </div>
+                <span class="brand-name">ReadersClub</span>
+            </div>
+            
+            <div class="nav-actions">
+                <a href="index.html" class="btn btn-outline">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+                <button class="theme-toggle" id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="user-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face" alt="User">
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Editor Main Content -->
+    <main class="blog-editor-main">
+        <div class="editor-container-full">
+            <!-- Editor Header -->
+            <div class="editor-header">
+                <div class="editor-header-left">
+                    <h1 class="editor-title">Edit Post</h1>
+                    <button class="btn btn-outline btn-sm">
+                        <i class="fas fa-plus"></i>
+                        Add New
+                    </button>
+                </div>
+                
+                <div class="editor-header-actions">
+                    <div class="screen-options">
+                        <button class="btn btn-outline btn-sm">
+                            Screen Options
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                    <div class="help-dropdown">
+                        <button class="btn btn-outline btn-sm">
+                            Help
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editor Form -->
+            <form class="blog-editor-form" id="blog-editor-form">
+                <div class="editor-form-grid">
+                    <!-- Left Column - Main Content Editor -->
+                    <div class="editor-form-main">
+                        <div class="form-group">
+                            <label for="post-title">Post Title</label>
+                            <input type="text" id="post-title" name="title" value="A New Blog Post" placeholder="Enter your post title..." required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="post-permalink">Permalink:</label>
+                            <div class="permalink-input-group">
+                                <input type="text" id="post-permalink" name="permalink" value="a-new-blog-post/" readonly>
+                                <button type="button" class="btn btn-outline btn-sm" id="edit-permalink-btn">Edit</button>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="button" class="btn btn-outline" id="add-media-btn">
+                                <i class="fas fa-plus"></i>
+                                Add Media
+                            </button>
+                        </div>
+                        
+                        <div class="editor-tabs">
+                            <button type="button" class="tab-btn active" data-tab="visual">
+                                Visual
+                            </button>
+                            <button type="button" class="tab-btn" data-tab="text">
+                                Text
+                            </button>
+                        </div>
+                        
+                        <div class="editor-toolbar">
+                            <div class="toolbar-group">
+                                <select class="format-select" id="format-select">
+                                    <option value="p">Paragraph</option>
+                                    <option value="h1">Heading 1</option>
+                                    <option value="h2">Heading 2</option>
+                                    <option value="h3">Heading 3</option>
+                                    <option value="h4">Heading 4</option>
+                                    <option value="h5">Heading 5</option>
+                                    <option value="h6">Heading 6</option>
+                                </select>
+                            </div>
+                            
+                            <div class="toolbar-group">
+                                <button type="button" class="toolbar-btn" data-command="bold" title="Bold">
+                                    <i class="fas fa-bold"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" data-command="italic" title="Italic">
+                                    <i class="fas fa-italic"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="toolbar-group">
+                                <button type="button" class="toolbar-btn" data-command="insertUnorderedList" title="Bullet List">
+                                    <i class="fas fa-list-ul"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" data-command="insertOrderedList" title="Numbered List">
+                                    <i class="fas fa-list-ol"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" data-command="formatBlock" data-value="blockquote" title="Blockquote">
+                                    <i class="fas fa-quote-right"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="toolbar-group">
+                                <button type="button" class="toolbar-btn" data-command="justifyLeft" title="Align Left">
+                                    <i class="fas fa-align-left"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" data-command="justifyCenter" title="Align Center">
+                                    <i class="fas fa-align-center"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" data-command="justifyRight" title="Align Right">
+                                    <i class="fas fa-align-right"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" data-command="justifyFull" title="Justify">
+                                    <i class="fas fa-align-justify"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="toolbar-group">
+                                <button type="button" class="toolbar-btn" data-command="createLink" title="Insert Link">
+                                    <i class="fas fa-link"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" data-command="unlink" title="Remove Link">
+                                    <i class="fas fa-unlink"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" data-command="strikethrough" title="Strikethrough">
+                                    <i class="fas fa-strikethrough"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" data-command="insertImage" title="Insert Image">
+                                    <i class="fas fa-image"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="toolbar-group">
+                                <button type="button" class="toolbar-btn" id="star-btn" title="Mark as Featured">
+                                    <i class="far fa-star"></i>
+                                </button>
+                                <button type="button" class="toolbar-btn" id="fullscreen-btn" title="Fullscreen">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="editor-container">
+                            <div class="wsgi-editor-content" id="wsgi-editor" contenteditable="true" data-placeholder="Start writing your amazing blog post..."></div>
+                        </div>
+                        
+                        <div class="editor-footer">
+                            <div class="editor-footer-left">
+                                <span class="word-count">Word count: 0</span>
+                            </div>
+                            <div class="editor-footer-right">
+                                <span class="last-edited">Last edited by <span class="editor-name">John Doe</span> on <span class="edit-date">June 3, 2022 at 1:47 pm</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column - Meta Boxes -->
+                    <div class="editor-form-sidebar">
+                        <!-- Publish Box -->
+                        <div class="meta-box publish-box">
+                            <div class="meta-box-header">
+                                <h3 class="meta-box-title">Publish</h3>
+                            </div>
+                            <div class="meta-box-content">
+                                <div class="publish-actions">
+                                    <button type="button" class="btn btn-outline btn-sm" id="save-draft-btn">
+                                        Save Draft
+                                    </button>
+                                    <button type="button" class="btn btn-outline btn-sm" id="preview-btn">
+                                        Preview
+                                    </button>
+                                </div>
+                                
+                                <div class="publish-status">
+                                    <div class="status-item">
+                                        <span class="status-label">Status:</span>
+                                        <span class="status-value">Draft</span>
+                                        <button type="button" class="edit-link">Edit</button>
+                                    </div>
+                                    <div class="status-item">
+                                        <span class="status-label">Visibility:</span>
+                                        <span class="status-value">Public</span>
+                                        <button type="button" class="edit-link">Edit</button>
+                                    </div>
+                                    <div class="status-item">
+                                        <span class="status-label">Publish immediately:</span>
+                                        <button type="button" class="edit-link">Edit</button>
+                                    </div>
+                                </div>
+                                
+                                <div class="seo-score">
+                                    <div class="seo-indicator">
+                                        <span class="seo-label">SEO:</span>
+                                        <span class="seo-score-value">11 / 100</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="publish-actions-bottom">
+                                    <button type="button" class="btn btn-outline btn-sm" id="move-to-trash-btn">
+                                        Move to Trash
+                                    </button>
+                                    <button type="submit" class="btn btn-primary" id="publish-btn">
+                                        Publish
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Tags Box -->
+                        <div class="meta-box tags-box">
+                            <div class="meta-box-header">
+                                <h3 class="meta-box-title">Tags</h3>
+                            </div>
+                            <div class="meta-box-content">
+                                <div class="tags-input-group">
+                                    <input type="text" id="post-tags" name="tags" placeholder="Add new tag">
+                                    <button type="button" class="btn btn-outline btn-sm" id="add-tag-btn">Add</button>
+                                </div>
+                                <p class="tags-instruction">Separate tags with commas.</p>
+                                <a href="#" class="tags-link">Choose from the most used tags.</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Categories Box -->
+                        <div class="meta-box categories-box">
+                            <div class="meta-box-header">
+                                <h3 class="meta-box-title">Categories</h3>
+                            </div>
+                            <div class="meta-box-content">
+                                <div class="categories-tabs">
+                                    <button type="button" class="tab-btn active" data-tab="all-categories">All Categories</button>
+                                    <button type="button" class="tab-btn" data-tab="most-used">Most Used</button>
+                                </div>
+                                
+                                <div class="categories-list">
+                                    <label class="category-item">
+                                        <input type="radio" name="category" value="general" checked>
+                                        <span class="category-name">General</span>
+                                    </label>
+                                    <label class="category-item">
+                                        <input type="radio" name="category" value="business-email">
+                                        <span class="category-name">Business Email</span>
+                                    </label>
+                                    <label class="category-item">
+                                        <input type="radio" name="category" value="css">
+                                        <span class="category-name">CSS</span>
+                                    </label>
+                                    <label class="category-item">
+                                        <input type="radio" name="category" value="technology">
+                                        <span class="category-name">Technology</span>
+                                    </label>
+                                    <label class="category-item">
+                                        <input type="radio" name="category" value="productivity">
+                                        <span class="category-name">Productivity</span>
+                                    </label>
+                                    <label class="category-item">
+                                        <input type="radio" name="category" value="design">
+                                        <span class="category-name">Design</span>
+                                    </label>
+                                    <label class="category-item">
+                                        <input type="radio" name="category" value="career">
+                                        <span class="category-name">Career</span>
+                                    </label>
+                                </div>
+                                
+                                <div class="categories-actions">
+                                    <button type="button" class="btn btn-outline btn-sm" id="add-category-btn">
+                                        + Add New Category
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="blog-editor.js"></script>
+</body>
+</html>
